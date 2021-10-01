@@ -6,6 +6,7 @@ import lombok.Generated;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Data@NoArgsConstructor
@@ -17,7 +18,7 @@ public class Infirmiere {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "adresse_id", referencedColumnName = "id")
     private Adresse adresse;
 
@@ -35,4 +36,7 @@ public class Infirmiere {
 
     @Column(name = "tel_perso")
     private String tel_perso;
+
+    @OneToMany
+    private Set<Patient> patients;
 }

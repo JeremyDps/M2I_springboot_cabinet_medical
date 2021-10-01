@@ -6,6 +6,7 @@ import lombok.Generated;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Data
@@ -29,4 +30,10 @@ public class Adresse {
 
     @Column(name = "ville")
     private String ville;
+
+    @OneToMany
+    private Set<Patient> patient;
+
+    @OneToMany
+    private Set<Infirmiere> infirmieres;
 }
