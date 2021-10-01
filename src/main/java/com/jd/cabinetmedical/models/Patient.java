@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Data
@@ -22,9 +23,8 @@ public class Patient {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "adresse_id", referencedColumnName = "id")
-    private Adresse adresse;
+    @OneToMany
+    private Set<Adresse> adresses;
 
     @ManyToOne
     @JoinColumn(name = "infirmiere_id", referencedColumnName = "id")
@@ -46,5 +46,6 @@ public class Patient {
     @Column(name = "numero_securite_sociale")
     private Long numero_securite_sociale;
 
-
+    @OneToMany
+    private Set<Deplacement> deplacements;
 }
