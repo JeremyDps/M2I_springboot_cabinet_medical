@@ -33,9 +33,9 @@ public class Adresse {
 
     @ManyToOne
     @JoinColumn(name = "patient_id", referencedColumnName = "id")
-    private Set<Patient> patient;
+    private Patient patient;
 
     @ManyToOne
     @JoinColumn(name = "infirmiere_id", referencedColumnName = "id")
-    private Set<Infirmiere> infirmieres;
+    private Infirmiere infirmieres;
 }
