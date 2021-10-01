@@ -31,11 +31,9 @@ public class Adresse {
     @Column(name = "ville")
     private String ville;
 
-    @ManyToOne
-    @JoinColumn(name = "patient_id", referencedColumnName = "id")
-    private Patient patient;
+    @OneToMany
+    private Set<Patient> patients;
 
-    @ManyToOne
-    @JoinColumn(name = "infirmiere_id", referencedColumnName = "id")
-    private Infirmiere infirmieres;
+    @OneToMany
+    private Set<Infirmiere> infirmieres;
 }

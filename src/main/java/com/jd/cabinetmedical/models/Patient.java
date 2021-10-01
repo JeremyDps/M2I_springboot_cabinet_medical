@@ -7,6 +7,7 @@ import lombok.Generated;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Set;
 
@@ -23,11 +24,11 @@ public class Patient {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @OneToMany
-    private Set<Adresse> adresses;
+    @ManyToOne
+    @JoinColumn(name = "adresse_id", referencedColumnName = "id")
+    private Adresse adresse;
 
     @ManyToOne
-    @JoinColumn(name = "infirmiere_id", referencedColumnName = "id")
     private Infirmiere infirmiere;
 
     @Column(name = "nom")
@@ -37,7 +38,7 @@ public class Patient {
     private String prenom;
 
     @Column(name = "date_de_naissance")
-    private Date date_de_naissance;
+    private LocalDate date_de_naissance;
 
     @Column(columnDefinition = "ENUM('Homme', 'Femme', 'Autre'")
     @Enumerated(EnumType.STRING)

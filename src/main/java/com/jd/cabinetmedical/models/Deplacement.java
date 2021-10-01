@@ -1,5 +1,6 @@
 package com.jd.cabinetmedical.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Generated;
@@ -23,6 +24,7 @@ public class Deplacement {
 
     @ManyToOne
     @JoinColumn(name = "patient_id", referencedColumnName = "id")
+    @JsonIgnoreProperties(value = "infirmiere", allowSetters = true)
     private Patient patient;
 
     @Column(name = "date")
@@ -33,6 +35,7 @@ public class Deplacement {
 
     @ManyToOne
     @JoinColumn(name = "infirmiere_id", referencedColumnName = "id")
+    @JsonIgnoreProperties(value = "patients", allowSetters = true)
     private Infirmiere infirmiere;
 
 }

@@ -6,6 +6,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,6 +26,7 @@ public class AdresseController {
 
     @GetMapping
     public List<Adresse> findAll() {
+        LOGGER.info(String.valueOf(LocalDateTime.now()));
         LOGGER.info("Récupération de toutes les adresses");
         return this.adresseService.findAll();
     }
