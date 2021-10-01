@@ -2,6 +2,7 @@ package com.jd.cabinetmedical.services;
 
 import com.jd.cabinetmedical.interfaces.DeplacementService;
 import com.jd.cabinetmedical.models.Deplacement;
+import com.jd.cabinetmedical.repositories.DeplacementRepository;
 
 import java.util.List;
 

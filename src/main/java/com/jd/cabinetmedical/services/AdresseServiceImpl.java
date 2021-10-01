@@ -2,6 +2,7 @@ package com.jd.cabinetmedical.services;
 
 import com.jd.cabinetmedical.interfaces.AdresseService;
 import com.jd.cabinetmedical.models.Adresse;
+import com.jd.cabinetmedical.repositories.AdresseRepository;
 
 import java.util.List;
 

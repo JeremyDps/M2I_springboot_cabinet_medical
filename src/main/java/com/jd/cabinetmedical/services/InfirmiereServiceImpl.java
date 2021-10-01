@@ -2,6 +2,7 @@ package com.jd.cabinetmedical.services;
 
 import com.jd.cabinetmedical.interfaces.InfirmiereService;
 import com.jd.cabinetmedical.models.Infirmiere;
+import com.jd.cabinetmedical.repositories.InfirmiereRepository;
 
 import java.util.List;
 

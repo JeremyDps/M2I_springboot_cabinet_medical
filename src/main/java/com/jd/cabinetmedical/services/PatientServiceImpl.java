@@ -2,6 +2,7 @@ package com.jd.cabinetmedical.services;
 
 import com.jd.cabinetmedical.interfaces.PatientService;
 import com.jd.cabinetmedical.models.Patient;
+import com.jd.cabinetmedical.repositories.PatientRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
