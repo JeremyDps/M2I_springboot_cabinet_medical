@@ -16,6 +16,8 @@ import java.util.Date;
 @Table(name = "patient")
 public class Patient {
 
+    // Ceci est un commentaire très pertinent
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
