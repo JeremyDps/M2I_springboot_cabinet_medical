@@ -5,6 +5,7 @@ import com.jd.cabinetmedical.models.Infirmiere;
 import com.jd.cabinetmedical.repositories.InfirmiereRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 public class InfirmiereServiceImpl implements InfirmiereService {
 
@@ -26,7 +27,7 @@ public class InfirmiereServiceImpl implements InfirmiereService {
     }
 
     @Override
-    public Infirmiere findById(Integer id) {
+    public Optional<Infirmiere> findById(Integer id) {
         return this.infirmiereRepository.findById(id);
     }
 
