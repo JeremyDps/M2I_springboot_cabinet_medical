@@ -39,6 +39,6 @@ public class InfirmiereServiceImpl implements InfirmiereService {
 
     @Override
     public void deleteById(Integer id) {
-        this.infirmiereRepository.deleteyId(id);
+        this.infirmiereRepository.deleteById(id);
     }
 }

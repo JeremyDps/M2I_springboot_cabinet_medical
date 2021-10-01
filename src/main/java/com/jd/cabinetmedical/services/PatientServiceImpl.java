@@ -35,7 +35,7 @@ public class PatientServiceImpl implements PatientService {
 
     @Override
     public Patient update(Patient p) {
-        this.patientRepository.update(p);
+        this.patientRepository.save(p);
         return p;
     }
 
