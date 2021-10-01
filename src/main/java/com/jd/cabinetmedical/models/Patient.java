@@ -22,11 +22,11 @@ public class Patient {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "adresse_id", referencedColumnName = "id")
     private Adresse adresse;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "infirmiere_id", referencedColumnName = "id")
     private Infirmiere infirmiere;
 
