@@ -4,6 +4,7 @@ package com.jd.cabinetmedical.interfaces;
 import com.jd.cabinetmedical.models.Deplacement;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface DeplacementService {
 
@@ -11,7 +12,7 @@ public interface DeplacementService {
 
     public Deplacement save(Deplacement d);
 
-    public Deplacement findById(Integer id);
+    public Optional<Deplacement> findById(Integer id);
 
     public Deplacement update(Deplacement d);
 

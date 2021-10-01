@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
+import java.util.Optional;
 
 public class PatientServiceImpl implements PatientService {
 
@@ -27,7 +28,7 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public Patient findById(Integer id) {
+    public Optional<Patient> findById(Integer id) {
         return this.patientRepository.findById(id);
     }
 

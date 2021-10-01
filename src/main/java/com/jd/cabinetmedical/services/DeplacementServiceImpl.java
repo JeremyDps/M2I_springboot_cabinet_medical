@@ -4,6 +4,7 @@ import com.jd.cabinetmedical.interfaces.DeplacementService;
 import com.jd.cabinetmedical.models.Deplacement;
 
 import java.util.List;
+import java.util.Optional;
 
 public class DeplacementServiceImpl implements DeplacementService {
 
@@ -25,7 +26,7 @@ public class DeplacementServiceImpl implements DeplacementService {
     }
 
     @Override
-    public Deplacement findById(Integer id) {
+    public Optional<Deplacement> findById(Integer id) {
         return this.deplacementRepository.findById(id);
     }
 

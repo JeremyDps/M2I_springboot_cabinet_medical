@@ -4,6 +4,7 @@ import com.jd.cabinetmedical.interfaces.AdresseService;
 import com.jd.cabinetmedical.models.Adresse;
 
 import java.util.List;
+import java.util.Optional;
 
 public class AdresseServiceImpl implements AdresseService {
 
@@ -25,7 +26,7 @@ public class AdresseServiceImpl implements AdresseService {
     }
 
     @Override
-    public Adresse findById(Integer id) {
+    public Optional<Adresse> findById(Integer id) {
         return this.adresseRepository.findById(id);
     }
 
