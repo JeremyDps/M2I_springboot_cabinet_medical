@@ -12,6 +12,6 @@ logging:
   level:
     root: WARN
     com.jd: INFO
-  file:
-    name: log.txt
-    path: ./
+  #file:
+   # name: log.txt
+    #path: ./
