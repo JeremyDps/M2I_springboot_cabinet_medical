@@ -1,5 +1,6 @@
 package com.jd.cabinetmedical.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Generated;
@@ -9,7 +10,8 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Data@NoArgsConstructor
+@Data
+@NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "infirmiere")
 public class Infirmiere {
@@ -20,6 +22,7 @@ public class Infirmiere {
 
     @ManyToOne
     @JoinColumn(name = "adresse_id", referencedColumnName = "id")
+    @JsonIgnoreProperties(value = {"patients", "infirmieres"})
     private Adresse adresse;
 
     @Column(name = "numero_professionnel")
@@ -38,8 +41,10 @@ public class Infirmiere {
     private String tel_perso;
 
     @OneToMany
+    @JsonIgnoreProperties(value = "infirmiere", allowSetters = true)
     private Set<Patient> patients;
 
     @OneToMany
+    @JsonIgnoreProperties(value = "infirmiere", allowSetters = true)
     private Set<Deplacement> deplacements;
 }

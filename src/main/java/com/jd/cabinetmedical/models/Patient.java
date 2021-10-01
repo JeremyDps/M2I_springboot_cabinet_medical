@@ -1,5 +1,6 @@
 package com.jd.cabinetmedical.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.jd.cabinetmedical.enums.Sexe;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -29,6 +30,7 @@ public class Patient {
     private Adresse adresse;
 
     @ManyToOne
+    @JsonIgnoreProperties(value = {"adresse", "patients", "deplacements"}, allowSetters = true)
     private Infirmiere infirmiere;
 
     @Column(name = "nom")
@@ -48,5 +50,6 @@ public class Patient {
     private Long numero_securite_sociale;
 
     @OneToMany
+    @JsonIgnoreProperties(value = "patient", allowSetters = true)
     private Set<Deplacement> deplacements;
 }

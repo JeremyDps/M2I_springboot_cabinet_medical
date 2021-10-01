@@ -1,5 +1,6 @@
 package com.jd.cabinetmedical.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Generated;
@@ -31,9 +32,11 @@ public class Adresse {
     @Column(name = "ville")
     private String ville;
 
-    @OneToMany
+    /*@OneToMany
+    //@JsonIgnoreProperties(value = "infirmiere", allowSetters = true)
     private Set<Patient> patients;
 
     @OneToMany
-    private Set<Infirmiere> infirmieres;
+    //@JsonIgnoreProperties(value = "patients", allowSetters = true)
+    private Set<Infirmiere> infirmieres;*/
 }

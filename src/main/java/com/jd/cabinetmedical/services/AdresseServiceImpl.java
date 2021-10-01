@@ -22,6 +22,20 @@ public class AdresseServiceImpl implements AdresseService {
 
     @Override
     public Adresse save(Adresse a) {
+
+        List<Adresse> adressesExistantes = this.adresseRepository.findAll();
+
+        if(!adressesExistantes.equals(null)) {
+            for(Adresse adresse: adressesExistantes) {
+                if(adresse.getCp() == a.getCp()
+                    && adresse.getNumero() == a.getNumero()
+                    && adresse.getRue() == a.getRue()
+                    && adresse.getVille() == a.getVille()) {
+                    return null;
+                }
+            }
+        }
+
         this.adresseRepository.save(a);
         return a;
     }
@@ -33,6 +47,20 @@ public class AdresseServiceImpl implements AdresseService {
 
     @Override
     public Adresse update(Adresse a) {
+
+        List<Adresse> adressesExistantes = this.adresseRepository.findAll();
+
+        if(!adressesExistantes.equals(null)) {
+            for(Adresse adresse: adressesExistantes) {
+                if(adresse.getCp() == a.getCp()
+                        && adresse.getNumero() == a.getNumero()
+                        && adresse.getRue() == a.getRue()
+                        && adresse.getVille() == a.getVille()) {
+                    return null;
+                }
+            }
+        }
+
         this.adresseRepository.save(a);
         return a;
     }

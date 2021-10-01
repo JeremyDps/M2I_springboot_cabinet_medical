@@ -1,6 +1,7 @@
 package com.jd.cabinetmedical.services;
 
 import com.jd.cabinetmedical.interfaces.InfirmiereService;
+import com.jd.cabinetmedical.models.Adresse;
 import com.jd.cabinetmedical.models.Infirmiere;
 import com.jd.cabinetmedical.repositories.InfirmiereRepository;
 
@@ -22,6 +23,17 @@ public class InfirmiereServiceImpl implements InfirmiereService {
 
     @Override
     public Infirmiere save(Infirmiere i) {
+
+        List<Infirmiere> infirmieresExistantes = this.infirmiereRepository.findAll();
+
+        if(!infirmieresExistantes.equals(null)) {
+            for(Infirmiere infirmiere: infirmieresExistantes) {
+                if(infirmiere.getNumero_professionnel() == i.getNumero_professionnel()) {
+                    return null;
+                }
+            }
+        }
+
         this.infirmiereRepository.save(i);
         return i;
     }
@@ -33,6 +45,17 @@ public class InfirmiereServiceImpl implements InfirmiereService {
 
     @Override
     public Infirmiere update(Infirmiere i) {
+
+        List<Infirmiere> infirmieresExistantes = this.infirmiereRepository.findAll();
+
+        if(!infirmieresExistantes.equals(null)) {
+            for(Infirmiere infirmiere: infirmieresExistantes) {
+                if(infirmiere.getNumero_professionnel() == i.getNumero_professionnel()) {
+                    return null;
+                }
+            }
+        }
+
         this.infirmiereRepository.save(i);
         return i;
     }
