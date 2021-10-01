@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  db_mysql:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: cabinet_medical
+    volumes:
+      - ./dump/:/docker-entrypoint-initdb.d/
+      - ./data/:/var/lib/mysql
+    ports:
+      - 3355:3306
