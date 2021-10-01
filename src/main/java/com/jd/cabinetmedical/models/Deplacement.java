@@ -21,7 +21,7 @@ public class Deplacement {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "patient_id", referencedColumnName = "id")
     private Patient patient;
 
@@ -31,7 +31,7 @@ public class Deplacement {
     @Column(name = "cout")
     private Double cout;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "infirmiere_id", referencedColumnName = "id")
     private Infirmiere infirmiere;
 

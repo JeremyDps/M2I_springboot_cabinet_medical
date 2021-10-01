@@ -18,9 +18,8 @@ public class Infirmiere {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "adresse_id", referencedColumnName = "id")
-    private Adresse adresse;
+    @OneToMany
+    private Set<Adresse> adresses;
 
     @Column(name = "numero_professionnel")
     private int numero_professionnel;
@@ -39,4 +38,7 @@ public class Infirmiere {
 
     @OneToMany
     private Set<Patient> patients;
+
+    @OneToMany
+    private Set<Deplacement> deplacements;
 }
